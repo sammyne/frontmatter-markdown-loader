@@ -1,5 +1,5 @@
 {
-  "name": "frontmatter-markdown-loader",
+  "name": "@sammyne/frontmatter-markdown-loader",
   "version": "1.6.0",
   "description": "Webpack loader for Front Matter-ed Markdown file to get frontmatter attributes and compiled Vue component",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/hmsk/frontmatter-markdown-loader.git"
+    "url": "https://github.com/sammyne/frontmatter-markdown-loader.git"
   },
   "keywords": [
     "webpack",
@@ -18,12 +18,15 @@
     "vue",
     "loader"
   ],
-  "author": "Kengo Hamasaki <k.hamasaki@gmail.com>",
+  "author": "Sammy Li <xiangminli@alumni.sjtu.edu.cn>",
+  "contributors": [
+    "Kengo Hamasaki <k.hamasaki@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hmsk/frontmatter-markdown-loader/issues"
+    "url": "https://github.com/sammyne/frontmatter-markdown-loader/issues"
   },
-  "homepage": "https://github.com/hmsk/frontmatter-markdown-loader#readme",
+  "homepage": "https://github.com/sammyne/frontmatter-markdown-loader#readme",
   "dependencies": {
     "front-matter": "^3.0.1",
     "loader-utils": "^1.2.3",
