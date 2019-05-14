@@ -1,6 +1,8 @@
 const loaderUtils = require("loader-utils")
 const matter = require("gray-matter")
 
+const git = require("./packages/git")
+
 const md = require("markdown-it")({
   html: true,
 })
