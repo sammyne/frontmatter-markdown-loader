@@ -61,5 +61,15 @@
       "^.+\\.js$": "babel-jest",
       "^.+\\.vue$": "vue-jest"
     }
+  },
+  "files": [
+    "dist/",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
