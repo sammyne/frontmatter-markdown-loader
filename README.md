@@ -1,8 +1,7 @@
 # frontmatter-markdown-loader
 
-[![npm](https://img.shields.io/npm/v/frontmatter-markdown-loader.svg?style=for-the-badge)](https://www.npmjs.com/package/frontmatter-markdown-loader)
+[![npm](https://img.shields.io/npm/v/@sammyne/frontmatter-markdown-loader.svg?style=for-the-badge)](https://www.npmjs.com/package/frontmatter-markdown-loader)
 [![CircleCI](https://img.shields.io/circleci/project/github/hmsk/frontmatter-markdown-loader/master.svg?style=for-the-badge)](https://circleci.com/gh/hmsk/frontmatter-markdown-loader/tree/master)
-
 
 Webpack Loader for: FrontMatter (.md) which returns Compiled HTML + Attributes (+ [Compiled object as a Vue component](https://github.com/hmsk/frontmatter-markdown-loader-vue-sample))
 
@@ -15,6 +14,7 @@ tags:
   - tag1
   - tag2
 ---
+
 # Title
 
 message
@@ -99,7 +99,6 @@ The loader could compile HTML section of files as Vue template. (Excepting code 
 
 Then you need to install `vue-template-compiler` and `vue-template-es2015-compiler` to your project (These are in optional dependencies).
 
-
 ```js
 {
   test: /\.md$/,
@@ -118,8 +117,8 @@ import fm from "something.md"
 export default {
   extends: fm.vue.component,
   components: {
-    OtherComponent // If markdown has `<other-component>` in body, will work :)
-  }
+    OtherComponent, // If markdown has `<other-component>` in body, will work :)
+  },
 }
 ```
 
@@ -144,26 +143,29 @@ so, you can use them in your Vue component:
 import OtherComponent from "OtherComponent.vue"
 
 export default {
-  data () {
+  data() {
     return {
-      templateRender: null
+      templateRender: null,
     }
   },
 
   components: {
-    OtherComponent // If markdown has `<other-component>` in body, will work :)
+    OtherComponent, // If markdown has `<other-component>` in body, will work :)
   },
 
-  render (createElement) {
-    return this.templateRender ? this.templateRender() : createElement("div", "Rendering");
+  render(createElement) {
+    return this.templateRender
+      ? this.templateRender()
+      : createElement("div", "Rendering")
   },
 
-  created () {
-    this.templateRender = new Function(fm.vue.render)();
-    this.$options.staticRenderFns = new Function(fm.vue.staticRenderFns)();
-  }
+  created() {
+    this.templateRender = new Function(fm.vue.render)()
+    this.$options.staticRenderFns = new Function(fm.vue.staticRenderFns)()
+  },
 }
 ```
+
 </details>
 
 #### Component's root element
